@@ -1,0 +1,17 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+    tags:
+      - 'v*.*.*'
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  docker:
+    uses: paideia-code/paideia-infra-pipelines/.github/workflows/docker-publish.yml@main
+    with:
+      image-name: paideia-template-nest-rest
