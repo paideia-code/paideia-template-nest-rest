@@ -1,6 +1,8 @@
-# Modo local - sin app en contenedor, con demás servicios necesarios - uso para hot reload com npm run start:dev
+# Modo desarrollo local
+# Levanta componentes de los que depende la aplicación, como la base de datos.
+# Ideal para desarrollo local con hot reload.
+# Uso script: npm run compose:local
 # Uso: docker compose -f docker-compose.local.yml up -d
-#      npm run start:dev
 
 services:
   db:
