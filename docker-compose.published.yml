@@ -1,11 +1,11 @@
-# Modo producción
-# Build para producción según el Dockerfile.
-# Uso script: npm run compose:build
-# Uso: docker compose up -d --build
+# Modo imagen publicada
+# Usa la imagen de GHCR sin build del código local
+# Uso script: npm run compose:published
+# Uso: docker compose -f docker-compose.published.yml up -d
 
 services:
   app:
-    build: .
+    image: ghcr.io/paideia-code/paideia-template-nest-rest:main
     container_name: app_paideia_template_nest_rest
     ports:
       - '${PORT}:${PORT}'

@@ -12,13 +12,13 @@ async function bootstrap() {
   const appName = packageJson.name;
   const appVersion = packageJson.version;
   const port = configService.get<number>('PORT') ?? 3000;
-  const environment = configService.get<string>('NODE_ENV') ?? 'development';
+  const environment = configService.get<string>('NODE_ENV');
 
   app.setGlobalPrefix(appName);
   await app.listen(port);
 
   logger.log(`Application started: ${appName} v${appVersion}`);
   logger.log(`Server listening on http://localhost:${port}`);
-  logger.debug(`Environment: ${environment}`);
+  logger.log(`Environment: ${environment}`);
 }
 bootstrap();
